@@ -14,7 +14,7 @@ Using this in your app should be relatively straightforward:
 
 Note: You need to be running at least version 1.1.9 of the App Engine SDK.
 
--- 
+--
 I hope you find this useful, tav
 
 """
@@ -324,14 +324,14 @@ class OAuthClient(object):
 
     def set_cookie(self, value, path='/'):
         self.handler.response.headers.add_header(
-            'Set-Cookie', 
+            'Set-Cookie',
             '%s=%s; path=%s; expires="Fri, 31-Dec-2021 23:59:59 GMT"' %
             ('oauth.%s' % self.service, value, path)
             )
 
     def expire_cookie(self, path='/'):
         self.handler.response.headers.add_header(
-            'Set-Cookie', 
+            'Set-Cookie',
             '%s=; path=%s; expires="Fri, 31-Dec-1999 23:59:59 GMT"' %
             ('oauth.%s' % self.service, path)
             )
